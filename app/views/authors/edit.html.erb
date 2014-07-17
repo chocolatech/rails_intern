@@ -1,0 +1,9 @@
+<h1>Edytuj mail</h1>
+<%= form_for(@author) do |f| %>
+<% @author.errors.full_messages.each do |err| %> 
+ <li><%= err %></li> 
+<% end %>
+  <%= f.label "stary mail" %>
+  <%= f.text_field :email %>
+  <%= f.submit "Edytuj!" %>
+  <% end %>

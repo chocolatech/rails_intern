@@ -1,0 +1,14 @@
+<h1>Dodaj autora</h1>
+<%= form_for(@author) do |f| %>
+<% @author.errors.full_messages.each do |err| %> 
+ <li><%= err %></li> 
+<% end %>
+  <%= f.label "podaj imie" %>
+  <%= f.text_field :name %>
+  <%= f.label "podaj email" %>
+  <%= f.text_field :email %>
+  <%= f.hidden_field :user_id, value: current_user.id%>
+  
+  <%= f.submit "Dodaj!" %>
+  <% end %>
+

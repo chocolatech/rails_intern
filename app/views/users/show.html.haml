@@ -1,0 +1,8 @@
+%h1 panel usera
+%h3=@user.email
+%hr
+%ul
+  -@user.authors.each do |author|
+    %li
+      =author.name
+      =link_to "pokaz", author_path(author.id)

@@ -1,0 +1,10 @@
+%h1
+  Lista komentarzy
+=link_to "dodaj", new_comment_path
+%ul
+  -@comments.each do |comment|
+    %li
+      =comment.text
+      = link_to "edytuj", edit_comment_path(id: comment.id)
+      = link_to "update", comment_path(id: comment.id), method: :patch
+      = link_to "usuń", comment_path(id: comment.id), method: :delete

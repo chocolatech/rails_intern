@@ -1,0 +1,9 @@
+<h1>Dodaj komentarz</h1>
+<%= form_for(@comment) do |f| %>
+<% @comment.errors.full_messages.each do |err| %> 
+ <li><%= err %></li> 
+<% end %>
+  <%= f.label "tresc komentarza" %>
+  <%= f.text_field :text %>
+  <%= f.submit "Dodaj!" %>
+  <% end %>

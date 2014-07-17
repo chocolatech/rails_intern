@@ -1,0 +1,11 @@
+%h1
+  Lista autorów
+=link_to "dodaj", new_author_path
+
+%ul
+  -@authors.each do |author|
+    %li
+      =author.name
+      =link_to "edytuj", edit_author_path(id: author.id)
+      =link_to "update", author_path(id: author.id), method: :patch
+      =link_to "usuń", author_path(id: author.id), method: :delete

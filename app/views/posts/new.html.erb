@@ -1,0 +1,9 @@
+<h1>Dodaj post</h1>
+<%= form_for(@post) do |f| %>
+<% @post.errors.full_messages.each do |err| %> 
+ <li><%= err %></li> 
+<% end %>
+  <%= f.label "tresc posta" %>
+  <%= f.text_field :text %>
+  <%= f.submit "Dodaj!" %>
+  <% end %>

@@ -1,0 +1,9 @@
+%h1
+  Lista postów
+=link_to "dodaj", new_post_path
+%ul
+  -@posts.each do |post|
+    %li
+      =post.text
+      = link_to "edytuj", edit_post_path(id: post.id)
+      = link_to "usuń", post_path(id: post.id), method: :delete
