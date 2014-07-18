@@ -47,7 +47,7 @@ class PostsController < ApplicationController
 
   private 
   def user_signed_in
-  if current_user and (current_user.id != params[:id].to_i)
+  unless current_user and (current_user.id != params[:id].to_i)
   redirect_to posts_path, alert: "To nie twoje konto"
   end
   true

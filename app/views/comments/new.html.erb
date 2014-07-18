@@ -5,5 +5,7 @@
 <% end %>
   <%= f.label "tresc komentarza" %>
   <%= f.text_field :text %>
+  <%= f.hidden_field :post_id, value: @post_id %>
   <%= f.submit "Dodaj!" %>
+
   <% end %>

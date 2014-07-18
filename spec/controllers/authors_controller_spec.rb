@@ -33,4 +33,15 @@ end
   end
 end
 
+  describe "PATCH #update" do
+    it 'redirects to authors_path after successful edit' do
+      author1 = Author.create(id: 1, name: "Ola", email: "test@test.pl")
+      patch :update, id: 1, author: {name:"Ola", email: "testy@test.pl"}
+      expect(response).to redirect_to(authors_path)
+    end
+  end
+
+  # describe "DELETE #destroy" do
+  # end
+
 end

@@ -5,5 +5,13 @@
   -@posts.each do |post|
     %li
       =post.text
-      = link_to "edytuj", edit_post_path(id: post.id)
-      = link_to "usuń", post_path(id: post.id), method: :delete
+        
+      .button.btn.btn-default
+        =link_to "Edytuj", edit_post_path(id: post.id), role: "button"
+      .button.btn.btn-default
+        = link_to "usuń", post_path(id: post.id), method: :delete, role: "button"
+      .button.btn.btn-default
+        =link_to "dodaj komentarz", new_comment_path(id: post.id), role: "button"
+      /%a.button.btn.btn-primary{role: "button", href: edit_post_path(id: post.id)} Edytuj
+      /%a.button.btn.btn-warning{role: "button", href: post_path(id: post.id), method: :delete} Usuń
+      /%a.button.btn.btn-default{role: "button", href: new_comment_path(id: post.comment.id)} Dodaj komentarz
